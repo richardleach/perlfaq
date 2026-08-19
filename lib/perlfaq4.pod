@@ -884,6 +884,10 @@ result to a scalar, producing a count of the number of matches.
 
     my $count = () = $string =~ /-\d+/g;
 
+Starting with Perl v5.46, this construct counts the number of matches
+directly. On older Perls, it generates an intermediate list of matches,
+counts the elements, and throws the list away, which is less efficient.
+
 =head2 How do I capitalize all the words on one line?
 X<Text::Autoformat> X<capitalize> X<case, title> X<case, sentence>
 
